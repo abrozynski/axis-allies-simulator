@@ -1,0 +1,12 @@
+from army import *
+from territory import *
+from game import territoryDict
+
+class map:
+ 
+ def getPossibleUnitMoves(unit, location):
+  possibleMoves=[]
+  for territory in self.territoryList:
+   if (measureDistance(location, territory) <= unitStats[unit]['Movement']):
+    possibleMoves.append(territory)
+  return possibleMoves

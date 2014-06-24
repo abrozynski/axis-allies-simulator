@@ -1,0 +1,26 @@
+from army import *
+from territory import *
+from nation import *
+import europe1940
+
+boardSetup=europe1940.europe1940()
+territoryDict = boardSetup.territoryDict
+
+class game:
+ 
+
+ def __init__(self):
+  players=boardSetup.players
+
+
+  
+def measureDistance(startingTerritory, endingTerritory):
+ distance =1
+ checklist = territoryDict[startingTerritory].borders
+ while (endingTerritory not in checklist):
+  for territory in checklist:
+   territoryObj=territoryDict[territory]
+   checklist += territoryObj.borders
+   checklist = list(set(checklist))
+  distance +=1
+ return distance

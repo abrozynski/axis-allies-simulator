@@ -1,0 +1,14 @@
+Axis and Allies Simulator
+
+Table of Contents:
+
+ Global Variables:
+  territoryDict (in game module) - Formatted as {territory name: territory object instance} 
+  unitStats (in army module) - Formatted as {unit name: { unit property : value}} (see comments in army.py for more information)
+
+ Classes:
+  game - Records all board and player information
+  army - Each army instance contains the following attributes:
+           - units: Formatted as {unit name: number of units present} (e.g. {'Infantry':3})
+           - location: name of the territory where the army is (str)
+           - owner: nation that controls the army (str)

@@ -1,0 +1,159 @@
+
+
+class territory:
+ 
+ IPCValue = 0
+ installations=[]
+ borders=[]
+ territoryType='Land'
+ originalOwner='UK'
+ name='Territory'
+
+ def __init__(self, territoryname, originalowner, value):
+  self.name=territoryname
+  self.originalOwner = originalowner
+  self.IPCValue=value
+
+
+def constructBorder(territory1, territory2):
+ 
+ territory1.borders.append(territory2)
+ territory2.borders.append(territory1)
+
+class map:
+ alberta=territory('Alberta Saskatchewan Manitoba', 'UK', 1)
+ ontario=territory('Ontario', 'UK', 2)
+ greenland=territory('Greenland', 'USA', 0)
+ newBrunswick=territory('New Brunswick Nova Scotia', 'UK', 0)
+ newfoundland=territory('Newfoundland Labrador', 'UK', 0)
+ centralUS=territory('Central United States', 'USA', 12)
+ easternUS=territory('Eastern United States', 'USA', 20)
+ southeastMexico=territory('Southeast Mexico', 'USA', 1)
+ centralAmerica=territory('Central America', 'USA', 1)
+ westIndies=territory('West Indies', 'USA', 1)
+ colombia=territory('Colombia', 'Colombia', 0)
+ peru=territory('Peru', 'Peru', 0)
+ bolivia=territory('Bolivia', 'Bolivia', 0)
+ paraguay=territory('Paraguay', 'Paraguay', 0)
+ chile=territory('Chile', 'Chile', 2)
+ argentina=territory('Argentina', 'Argentina', 2)
+ uruguay=territory('Uruguay', 'Uruguay', 0)
+ brazil=territory('Brazil', 'Brazil', 2)
+ argentina=territory('Argentina', 'Argentina', 2)
+ frenchGuiana=territory('French Guiana', 'France',0)
+ suriname=territory('Suriname', 'Netherlands',0)
+ britishGuiana=territory('British Guiana', 'UK',0)
+ iceland=territory('Iceland', 'UK',0)
+ scotland=territory('Scotland', 'UK',2)
+ uk=territory('United Kingdom', 'UK', 6)
+ eire=territory('Eire', 'Eire', 0)
+ guinea=territory('Portuguese Guinea', 'UK', 0)
+ frenchWestAfrica=territory('French West Africa', 'France', 1)
+ sierraLeone=territory('Sierra Leone', 'Sierra Leone', 0)
+ liberia=territory('Liberia', 'Liberia', 0)
+ goldCoast=territory('Gold Coast', 'UK', 0)
+ nigeria=territory('Nigeria', 'UK', 1)
+ frenchEquatorialAfrica=territory('French Equatorial Africa', 'France', 1)
+ belgianCongo=territory('Belgian Congo', 'UK', 1)
+ angola=territory('Angola', 'Angola', 1)
+ southWestAfrica=territory('South West Africa', 'UK', 1)
+ southAfrica=territory('Union of South Africa','UK', 2)
+ rhodesia=territory('Rhodesia', 'UK', 1)
+ mozambique=territory('Mozambique', 'Mozambique', 1)
+ madagascar=territory('French Madagascar', 'France', 1)
+ tanganyika=territory('Tanganyika', 'UK',1)
+ italianSomaliland=territory('Italian Somaliland', 'Italy', 0)
+ ethiopia=territory('Ethiopia', 'Italy', 1)
+ britishSomaliland=territory('British Somaliland', 'UK', 0)
+ egypt=territory('Egypt', 'UK', 2)
+ alexandria=territory('Alexandria', 'UK', 0)
+ tobruk=territory('Tobruk','Italy', 0)
+ libya=territory('Lybia', 'Italy', 1)
+ tunisia=territory('Tunisia', 'France', 1)
+ algeria=territory('Algeria', 'France',1)
+ morocco=territory('Morocco', 'France', 1)
+ riodeOro=territory('Rio de Oro','Rio de Oro',0)
+ gibraltar=territory('Gibraltar','UK', 0)
+ spain=territory('Spain', 'Spain',2)
+ portugal=territory('Portugal', 'Portugal', 1)
+ normandy=territory('Normandy-Bordeaux','France',2)
+ france=territory('France','France', 4)
+ southernFrance=territory('Southern France', 'France', 3)
+ holland=territory('Holland-Belgium','Germany', 3)
+ westernGermany=territory('Western Germany', 'Germany', 5)
+ denmark=territory('Denmark', 'Germany', 2)
+ norway=territory('Norway', 'Germany', 3)
+ sweden=territory('Sweden', 'Sweden', 3)
+ finland=territory('Finland', 'Finland', 2)
+ switzerland=territory('Switzerland', 'Switzerland', 2)
+ northernItaly=territory('Northern Italy', 'Italy', 4)
+ southernItaly=territory('Southern Italy', 'Italy', 3)
+ sardinia=territory('Sardinia', 'Italy', 0)
+ sicily=territory('Sicily', 'Italy', 0)
+ malta=territory('Malta', 'UK', 0)
+ germany=territory('Germany', 'Germany', 5)
+ southernGermany=territory('Greater Southern Germany', 'Germany', 4)
+ poland=territory('Poland', 'Germany', 2)
+ slovakia=territory('Slovakia Hungary', 'Germany', 3)
+ romania=territory('Romania', 'Romania', 3)
+ yugoslavia=territory('Yugoslavia', 'Yugoslavia', 2)
+ albania=territory('Albania', 'Italy', 1)
+ greece=territory('Greece', 'Greece', 2)
+ crete=territory('Crete', 'Crete', 0)
+ cyprus=territory('Cyprus', 'UK', 0)
+ bulgaria=territory('Bulgaria', 'Bulgaria', 1)
+ karelia=territory('Karelia', 'USSR', 1)
+ vyborg=territory('Vyborg', 'USSR', 0)
+ baltic=territory('Baltic States', 'USSR', 1)
+ belarus=territory('Belarus', 'USSR', 1)
+ easternPoland=territory('Eastern Poland', 'USSR', 1)
+ westernUkraine=territory('Western Ukraine', 'USSR', 2)
+ bessarabia=territory('Bessarabia', 'USSR', 0)
+ novgorod=territory('Novgorod', 'USSR', 2)
+ archangel=territory('Archangel', 'USSR', 1)
+ smolensk=territory('Smolensk', 'USSR', 1)
+ nenetsia=territory('Nenetsia', 'USSR', 0)
+ urals=territory('Urals', 'USSR', 1)
+ vologda=territory('Vologda', 'USSR', 1)
+ novosibirsk=territory('Novosibirsk', 'USSR', 1)
+ samara=territory('Samara', 'USSR', 1)
+ russia=territory('Russia', 'USSR', 3)
+ bryansk=territory('Bryansk', 'USSR', 1)
+ ukraine=territory('Ukraine', 'USSR', 2)
+ rostov=territory('Rostov', 'USSR', 2)
+ caucasus=territory('Caucasus', 'USSR', 2)
+ volgograd=territory('Volgograd', 'USSR', 2)
+ kazakhstan=territory('Kazakhstan', 'USSR', 1)
+ turkmenistan=territory('Turkmenistan', 'USSR', 0)
+ afghanistan=territory('Afghanistan', 'Afghanistan', 0)
+ westIndia=territory('West India', 'UK', 2)
+ easternPersia=territory('Eastern Persia', 'Eastern Persia', 0)
+ persia=territory('Persia', 'Persia', 2)
+ northwestPersia=territory('Northwest Persia', 'Northwest Persia', 0)
+ iraq=territory('Iraq', 'Iraq', 2)
+ arabia=territory('Saudi Arabia', 'Saudi Arabia', 2)
+ transJordan=territory('Trans-Jordan', 'UK', 1)
+ syria=territory('Syria', 'France', 1)
+ turkey=territory('Turkey', 'Turkey', 2)
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
