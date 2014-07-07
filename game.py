@@ -1,17 +1,21 @@
 from army import *
 from territory import *
 from nation import *
-import europe1940
+import europe1940 as boardSetup
+import gameMap
 
-boardSetup=europe1940.europe1940()
-territoryDict = boardSetup.territoryDict
+#theboard=boardSetup.boardSetup()
+#territoryDict = theboard.territoryDict
+#theaters = theboard.theaters
+
 
 class game:
  
 
  def __init__(self):
-  players=boardSetup.players
-
+  self.gameBoard=boardSetup.boardSetup()
+  self.players=self.gameBoard.players
+  self.territoryDict=self.gameBoard.territoryDict
 
   
 

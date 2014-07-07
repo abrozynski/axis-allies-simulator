@@ -5,7 +5,6 @@ class territory:
  
  IPCValue = 0
  installations={}
- territoryType='Land'
 
 
  def __init__(self, territoryname, originalOwner, value):
@@ -16,6 +15,7 @@ class territory:
 #  self.armies.append(army(territoryname))
   self.borders=[]
   self.armies={}
+  self.territoryType='Land'
 
 
 # def moveUnit(self, unit, destination):
