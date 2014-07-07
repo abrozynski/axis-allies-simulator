@@ -1,7 +1,7 @@
 from territory import *
 from nation import *
-from army import *
-from installation import *
+#from army import *
+#from installation import *
 from militaryOrganization import theater, zoneOfControl
 
 class boardSetup:
@@ -868,75 +868,75 @@ class boardSetup:
   siberiaZones={}
 
   greatBritainTerritories = self.territoryDict['United Kingdom'].borders + ['United Kingdom','seaZone111','seaZone119','Eire','seaZone118','seaZone123','Iceland']
-  greatBritainZone = zoneOfControl('Great Britain', greatBritainTerritories)
+  greatBritainZone = zoneOfControl('Great Britain', greatBritainTerritories, self.territoryDict)
   westernEuropeZones['Great Britain']=greatBritainZone
   
   franceTerritories = ['France', 'Holland Belgium', 'Normandy Bordeaux','Southern France','seaZone105','seaZone93']
-  westernEuropeZones['France']=zoneOfControl('France', franceTerritories)
+  westernEuropeZones['France']=zoneOfControl('France', franceTerritories,self.territoryDict)
 
   iberiaTerritories = self.territoryDict['Portugal'].borders + ['Portugal','Gibraltar']
-  westernEuropeZones['Iberia'] = zoneOfControl('Iberia',iberiaTerritories)
+  westernEuropeZones['Iberia'] = zoneOfControl('Iberia',iberiaTerritories, self.territoryDict)
 
   northAfricaTerritories =self.territoryDict['Algeria'].borders +['Algeria']
-  westernEuropeZones['North Africa']=zoneOfControl('North Africa',northAfricaTerritories)
+  westernEuropeZones['North Africa']=zoneOfControl('North Africa',northAfricaTerritories, self.territoryDict)
 
   egyptTerritories = self.territoryDict['Egypt'].borders + ['Egypt','seaZone96','Malta','Lybia','Tobruk']
-  middleEastZones['Egypt']=zoneOfControl('Egypt',egyptTerritories)
+  middleEastZones['Egypt']=zoneOfControl('Egypt',egyptTerritories, self.territoryDict)
 
   persiaTerritories = self.territoryDict['Persia'].borders +['Saudi Arabia','Persia','seaZone77','Afghanistan','Syria']
-  middleEastZones['Persia']=zoneOfControl('Persia',persiaTerritories)
+  middleEastZones['Persia']=zoneOfControl('Persia',persiaTerritories, self.territoryDict)
 
   caucasusTerritories = ['Caucasus','Rostov','Volgograd','Kazakhstan','Turkmenistan']
-  easternEuropeZones['Caucasus']=zoneOfControl('Caucasus',caucasusTerritories)
+  easternEuropeZones['Caucasus']=zoneOfControl('Caucasus',caucasusTerritories, self.territoryDict)
   
   ukraineTerritories =['Bessarabia','Western Ukraine','Ukraine','seaZone100']
-  easternEuropeZones['Ukraine']=zoneOfControl('Ukraine',ukraineTerritories)
+  easternEuropeZones['Ukraine']=zoneOfControl('Ukraine',ukraineTerritories, self.territoryDict)
   
   russiaTerritories=self.territoryDict['Russia'].borders +['Russia']
-  easternEuropeZones['Russia']=zoneOfControl('Russia',russiaTerritories)
+  easternEuropeZones['Russia']=zoneOfControl('Russia',russiaTerritories, self.territoryDict)
   
-  siberiaZones['Central Asia']=zoneOfControl('Central Asia',['Urals','Novosibirsk'])
+  siberiaZones['Central Asia']=zoneOfControl('Central Asia',['Urals','Novosibirsk'], self.territoryDict)
 
   novgorodTerritories = self.territoryDict['Novgorod'].borders+['Novgorod','Nenetsia']
-  easternEuropeZones['Novgorod']=zoneOfControl('Novgorod',novgorodTerritories)
+  easternEuropeZones['Novgorod']=zoneOfControl('Novgorod',novgorodTerritories, self.territoryDict)
   
   scandanaviaTerritories =['seaZone125','seaZone126','Norway','Sweden','Finland']
-  westernEuropeZones['Scandanavia']=zoneOfControl('Scandanavia',scandanaviaTerritories)
+  westernEuropeZones['Scandanavia']=zoneOfControl('Scandanavia',scandanaviaTerritories, self.territoryDict)
 
   polandTerritories=['seaZone114','Poland','Slovakia Hungary','Romania','Eastern Poland']
-  easternEuropeZones['Poland']=zoneOfControl('Poland',polandTerritories)
+  easternEuropeZones['Poland']=zoneOfControl('Poland',polandTerritories, self.territoryDict)
   
   germanyTerritories = ['Western Germany','Denmark','seaZone112','seaZone113','Germany','Greater Southern Germany']
-  westernEuropeZones['Germany'] = zoneOfControl('Germany',germanyTerritories)
+  westernEuropeZones['Germany'] = zoneOfControl('Germany',germanyTerritories, self.territoryDict)
 
   
   italyTerritories=['Northern Italy','Switzerland','Southern Italy','seaZone97','seaZone95','Sardinia','Sicily']
-  westernEuropeZones['Italy'] = zoneOfControl('Italy',italyTerritories)
+  westernEuropeZones['Italy'] = zoneOfControl('Italy',italyTerritories, self.territoryDict)
 
   balkanTerritories = ['Yugoslavia','Bulgaria','Albania','Greece','seaZone99','Crete','Cyprus','Turkey']
-  easternEuropeZones['Balkans'] = zoneOfControl('Balkans',balkanTerritories)
+  easternEuropeZones['Balkans'] = zoneOfControl('Balkans',balkanTerritories, self.territoryDict)
 
 
   centralAtlanticTerritories =['seaZone117','seaZone107','seaZone108','seaZone103','seaZone102','seaZone90']
-  atlanticZones['Central Atlantic']=zoneOfControl('Central Atlantic',centralAtlanticTerritories)
+  atlanticZones['Central Atlantic']=zoneOfControl('Central Atlantic',centralAtlanticTerritories, self.territoryDict)
 
   canadaTerritories =self.territoryDict['seaZone120'].borders + ['seaZone120','New Brunswick Nova Scotia','seaZone106','seaZone116','seaZone121','seaZone122']
-  atlanticZones['Canada']=zoneOfControl('Canada',canadaTerritories)
+  atlanticZones['Canada']=zoneOfControl('Canada',canadaTerritories, self.territoryDict)
 
 
   easternUSTerritories = ['Central United States','Eastern United States','seaZone 101']
-  atlanticZones['Eastern United States']=zoneOfControl('Eastern United States', easternUSTerritories)
+  atlanticZones['Eastern United States']=zoneOfControl('Eastern United States', easternUSTerritories, self.territoryDict)
 
 
   centralAmericaTerritories =['Southeast Mexico','seaZone89','West Indies','Central America','seaZone64']
-  atlanticZones['Central America']=zoneOfControl('Central America',centralAmericaTerritories)
+  atlanticZones['Central America']=zoneOfControl('Central America',centralAmericaTerritories, self.territoryDict)
 
 
   southAmericaTerritories = self.territoryDict['Peru'].borders +self.territoryDict['Argentina'].borders + ['Peru','Argentina','seaZone88','British Guiana','Suriname','French Guiana','seaZone86','seaZone67','seaZone84','seaZone68']
-  atlanticZones['South America']=zoneOfControl('South America',southAmericaTerritories)
+  atlanticZones['South America']=zoneOfControl('South America',southAmericaTerritories, self.territoryDict)
   
 
-  self.theaters={'Western Europe':theater('Western Europe', westernEuropeZones),'Middle East':theater('MiddleEast',middleEastZones),'Africa':theater('Aftrica',africaZones),'Eastern Europe':theater('Eastern Europe', easternEuropeZones),'Atlantic':theater('Atlantic',atlanticZones),'Siberia':theater('Siberia',siberiaZones)}
+  self.theaters={'Western Europe':theater('Western Europe', westernEuropeZones, self.territoryDict),'Middle East':theater('MiddleEast',middleEastZones, self.territoryDict),'Africa':theater('Aftrica',africaZones, self.territoryDict),'Eastern Europe':theater('Eastern Europe', easternEuropeZones, self.territoryDict),'Atlantic':theater('Atlantic',atlanticZones, self.territoryDict),'Siberia':theater('Siberia',siberiaZones, self.territoryDict)}
   
 
 

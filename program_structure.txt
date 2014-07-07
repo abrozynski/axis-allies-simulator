@@ -1,0 +1,17 @@
+Here's where I keep track of inheretence for my feeble brain
+
+army - inherets NOTHING. GOOD DAY SIR.
+
+nation - nothing
+
+installation - nothing
+
+battle <- army (change this to nothing)
+
+territory <- army, installation
+
+militaryOrganization <- nothing
+
+europe1940 <- territory, nation, militaryOrganization
+
+game <- europe1940
