@@ -19,12 +19,9 @@ class theater:
   
  def getCombatants(self):
   combatants=[]
-  for zone in self.zones:
-   zoneCombatants = self.zones[zone].getCombatants()
-   for nation in zoneCombatants:
-    if nation not in combatants:
-     combatants.append(nation)
-  return combatants
+  for zone in self.zones.values():
+   combatants = combatants + zone.getCombatants()
+  return list(set(combatants))
 
  def getAvailableSupport(self):
   for zone in self.zones:
@@ -32,7 +29,26 @@ class theater:
     self.support[territory] = self.territoryDict[territory].armies[nation].getUnitsOfType['Air']
 
 
-   
+ def getEconomicStandings(self):
+  economicStandings = {}
+  for nation in self.getCombatants():
+   economicStandings[nation]=0
+  for zone in self.zones.values():
+   zoneStandings = zone.getEconomicStandings()
+   for nation in zoneStandings:
+    economicStandings[nation] += zoneStandings[nation]
+  return economicStandings
+
+
+ def getOffensivePower(self):
+  offensivePowers = {}
+  for nation in self.getCombatants():
+   offensivePowers[nation]=0
+  for zone in self.zones.values():
+   zoneStandings = zone.getOffensivePower()
+   for nation in zoneStandings:
+    offensivePowers[nation] += zoneStandings[nation]
+  return offensivePowers
      
      
 

@@ -1,3 +1,4 @@
+from army import nullArmy
 
 class nation:
 
@@ -7,4 +8,4 @@ class nation:
   self.stance = 'Neutral'
   self.IPC = 0
   self.controlledTerritories=[]
-  
+  self.stagedArmy = nullArmy

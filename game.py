@@ -3,6 +3,7 @@
 #from nation import *
 import europe1940 as boardSetup
 #import gameMap
+from army import unitStats, nullArmy
 
 #theboard=boardSetup.boardSetup()
 #territoryDict = theboard.territoryDict
@@ -17,6 +18,8 @@ class game:
   self.players=self.gameBoard.players
   self.territoryDict=self.gameBoard.territoryDict
 
+
+# Methods for measuring distance and moving around on board
   
 
  def getTerritoriesInRange(self, startingTerritory, n):
@@ -72,3 +75,55 @@ class game:
      possibleLandings.append(territory)
   return possibleLandings  
 
+
+# Taking turns
+
+
+ def collectIncome(self, nation):
+#  for theater in self.gameBoard.theaters.values():
+#   if nation in theater.getCombatants():
+#    for zone in theater.zones.values():
+#     self.players[nation].IPC += zone.getEconomicStandings()[nation]
+  for territory in self.territoryDict.values():
+   if territory.owner == nation:
+    self.players[nation].IPC += territory.IPCValue
+
+#####
+#
+# DANGER WILL ROBINSON
+# 
+# Testing the above function shows that something is slightly off in the map initialization
+# Germany is short 3 IPCs
+# UK is short 2
+# USA IS A-OK
+# USSR is fine
+# france is splendid
+# Italy is good
+#
+# FIX THAT SHIT
+#
+######
+
+
+ def purchaseUnit(self, nation, unit, number=1):
+ 
+  self.players[nation].stagedArmy.addUnit(unit, n=number)
+  self.players[nation].IPC -= unitStats[unit]['Cost']*number
+
+
+
+
+
+
+# Strategery
+
+ def economicComparison(self, theaterName):
+  theater = self.gameBoard.theaters[theaterName]
+  economies ={'Axis':0,'Allies':0}
+  economicStandings = theater.getEconomicStandings()
+  for nation in economicStandings:
+   if nation in self.players:
+    side = self.players[nation].stance
+    if side in economies:
+     economies[side] += economicStandings[nation]
+  return economies

@@ -770,12 +770,15 @@ class boardSetup:
   ussr.IPC = 28
   ussr.controlledTerritories=[]
   self.players[ussr.name]=ussr
+  
 
   uk=nation('UK')
   uk.stance = 'Allies'
   uk.IPC = 29
   uk.controlledTerritories=[]
   self.players[uk.name]=uk
+
+
 
   usa =nation('USA')
   usa.stance = 'Neutral'
@@ -936,7 +939,7 @@ class boardSetup:
   atlanticZones['South America']=zoneOfControl('South America',southAmericaTerritories, self.territoryDict)
   
 
-  self.theaters={'Western Europe':theater('Western Europe', westernEuropeZones, self.territoryDict),'Middle East':theater('MiddleEast',middleEastZones, self.territoryDict),'Africa':theater('Aftrica',africaZones, self.territoryDict),'Eastern Europe':theater('Eastern Europe', easternEuropeZones, self.territoryDict),'Atlantic':theater('Atlantic',atlanticZones, self.territoryDict),'Siberia':theater('Siberia',siberiaZones, self.territoryDict)}
+  self.theaters={'Western Europe':theater('Western Europe', westernEuropeZones, self.territoryDict),'Middle East':theater('MiddleEast',middleEastZones, self.territoryDict),'Africa':theater('Africa',africaZones, self.territoryDict),'Eastern Europe':theater('Eastern Europe', easternEuropeZones, self.territoryDict),'Atlantic':theater('Atlantic',atlanticZones, self.territoryDict),'Siberia':theater('Siberia',siberiaZones, self.territoryDict)}
   
 
 
